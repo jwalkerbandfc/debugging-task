@@ -68,5 +68,5 @@ def main():
         else:
             print("Invalid choice. Please enter a number between 1 and 5.")
 
-//Call Main Menu
-    main()
+# Call Main Menu
+main()

@@ -91,7 +91,7 @@ class Program
 
             switch (choice)
             {
-                case "1": ViewInventory(), break;
+                case "1": ViewInventory(); break;
                 case "2": AddItem(); break;
                 case "3": EditItem(); break;
                 case "5":

@@ -97,7 +97,7 @@ class Program
                 case "4": RemoveItem(); break;
                 case "5":
                     Console.WriteLine("Exiting Inventory System.");
-                    return;
+                    return 0;
                 default:
                     Console.WriteLine("Invalid choice. Please enter a number between 1 and 5.");
                     break;

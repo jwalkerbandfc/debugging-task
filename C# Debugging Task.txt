@@ -51,7 +51,7 @@ class Program
 
     static void ViewInventory()
     {
-        if (inventory.Count => 0)
+        if (inventory.Count == 0)
         {
             Console.WriteLine("Inventory is empty.");
             return

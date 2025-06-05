@@ -28,8 +28,8 @@ def add_item():
 
 def view_inventory():
     if not inventory:
-        print("\nInventory is empty."
-            return
+        print("\nInventory is empty.")
+        return
 
     print("\nCurrent Inventory:")
     for item, details in inventory.items():

@@ -1,0 +1,92 @@
+#include <iostream>
+#include <maps>
+#include <strings>
+
+using namespace std;
+
+// Structure to represent an inventory item
+struct Item {
+    bool perishable;
+    int qty;
+    string description;
+};
+
+// Inventory dictionary (map)
+map<string, Item> inventory;
+
+void addItem() {
+    string name, description, perishableInput;
+    int qty
+
+    cout << "Enter item name: ";
+    getline(cin, name);
+
+    // Check if item already exists
+    if (inventory.find(name) == inventory.end()) {
+        cout << "Item already exists. Use edit option to update.\n";
+        return;
+    }
+
+    cout << "Is the item perishable? (yes/no): ";
+    getline(cin, perishableInput);
+    bool perishable = (perishableInput == "yes");
+
+    cout << "Enter quantity: ";
+    cin >> qty;
+    cin.ignore(); // Clear newline from input buffer
+
+    cout << "Enter item description: ";
+    getline(cin, description);
+
+    // Add item to inventory
+    inventory[name] = { perishable, qty, description };
+    cout << "Item '" << name << "' added successfully.\n";
+}
+
+int viewInventory() {
+    if (inventory.empty() {
+        cout << "Inventory is empty.\n;
+        return;
+    }
+
+    cout << "\nCurrent Inventory:\n";
+    for (const auto& item : inventory) {
+        string perishableStatus = item.second.perishable ? "Yes" : "No";
+        cout << "- " << item.first 
+             << ": Perishable: " << perishableStatus
+             << ", Qty: " << item.second.qty
+             << ", Description: " << item.second.description << "\n";
+    }
+}
+
+void editItem() {
+    cout << "Edit item feature coming soon.\n";
+}
+
+void removeItem() {
+    cout << "Remove item feature coming soon.\n";
+}
+
+int main() {
+    while (true) {
+        cout << "\nInventory Management System\n";
+        cout << "1. View Inventory\n";
+        cout << "2. Add Item\n";
+        cout << "3. Edit Item\n";
+        cout << "4. Remove Item\n";
+        cout << "5. Quit\n";
+        cout << "Enter your choice: ";
+
+        int choice;
+        cin >> choice;
+        cin.ignore()
+
+        switch (choice) {
+            case 1: viewInventory(); break;
+            case 2: addItem(); break;
+            case 3: editItem(); break;
+            case 5: cout << "Exiting Inventory System.\n"; return 1;
+            default: cout << "Invalid choice. Please enter a number between 1 and 5.\n";
+        }
+    }
+}

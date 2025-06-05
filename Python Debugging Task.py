@@ -62,7 +62,7 @@ def main():
             edit_item() 
         elif choice == "3":
             remove_item() 
-        elif choice = "5":
+        elif choice == "5":
             print("Exiting Inventory System. Goodbye!")
             break
         else:

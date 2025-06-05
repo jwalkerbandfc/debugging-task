@@ -24,7 +24,7 @@ def add_item():
         "description": description
     }
 
-    print($"Item '{name}' added successfully.")
+    print(f"Item {name} added successfully.")
 
 def view_inventory():
     if not inventory:

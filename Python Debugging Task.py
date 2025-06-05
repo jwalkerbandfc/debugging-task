@@ -52,7 +52,7 @@ def main():
         print("4. Remove Item")
         print("5. Quit")
 
-        choice = input("Enter your choice: ).strip()
+        choice = input("Enter your choice: ").strip()
 
         if choice == "1":
             view_inventory()

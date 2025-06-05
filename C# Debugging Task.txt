@@ -8,7 +8,7 @@ class Program
     {
         public bool Perishable { get; set }
         public int Qty { get; set; }
-        public string Description { get; set; }
+        public string Description { get; set; }= string.Empty;
     }
 
     // Dictionary to store inventory items (Initialized properly)

@@ -1,18 +1,18 @@
 using System;
-using System.Collections,Generic;
+using System.Collections; //removed generic as this caused errors with the class
 
 class Program
 {
     // Structure to represent an inventory item
     class Item
     {
-        public bool Perishable { get; set }
+        public bool Perishable { get; set; } //added ; after set
         public int Qty { get; set; }
         public string Description { get; set; }
     }
 
     // Dictionary to store inventory items (Initialized properly)
-    static Dictionary<string, Item> inventory = new Dictionary<string, Item();
+    static Dictionary<string, Item> inventory = new Dictionary<string, Item>(); // Item was missing > after it and before the bracket
 
     static void AddItem()
     {
@@ -27,7 +27,7 @@ class Program
         }
 
         Console.Write("Is the item perishable? (yes/no): ");
-        bool perishable = Console.ReadLine().Trim().ToLower() = "yes";
+        bool perishable = Console.ReadLine().Trim().ToLower() == "yes"; //changed second = to == bool needs to be exactly equal to true or false
 
         Console.Write("Enter quantity: ");
         if (!int.TryParse(Console.ReadLine().Trim(), out int qty))
@@ -36,7 +36,7 @@ class Program
             return;
         }
 
-        Console.Write("Enter item description;
+        Console.Write("Enter item description: "); //missing bracket and semicolon at the end of the string
         string description = Console.ReadLine().Trim();
 
         // Ensure inventory dictionary is initialized before adding
@@ -51,10 +51,10 @@ class Program
 
     static void ViewInventory()
     {
-        if (inventory.Count => 0)
+        if (inventory.Count == 0) //changed from inventory => 0 to inventory.Count == 0
         {
             Console.WriteLine("Inventory is empty.");
-            return
+            return; //missing semicolon
         }
 
         Console.WriteLine("\nCurrent Inventory:");
@@ -87,16 +87,19 @@ class Program
             Console.WriteLine("5. Quit");
             Console.Write("Enter your choice: ");
 
-            string choice == Console.ReadLine().Trim();
+            string choice = Console.ReadLine().Trim(); //had two = instead of one
 
             switch (choice)
             {
-                case "1": ViewInventory(), break;
+                case "1": ViewInventory(); break; //missing semicolon after brackets but before break
                 case "2": AddItem(); break;
                 case "3": EditItem(); break;
+                case "4": RemoveItem(); break; //option 4 was missing, added remove item and referenced RemoveItem above
                 case "5":
                     Console.WriteLine("Exiting Inventory System.");
-                    return;
+                    Environment.Exit(0);
+                    break;
+                    
                 default:
                     Console.WriteLine("Invalid choice. Please enter a number between 1 and 5.");
                     break;

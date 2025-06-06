@@ -41,7 +41,7 @@ def edit_item():
     print("\nEdit item feature coming soon.\n")
 
 def remove_item():
-    print("\nRemove item feature coming soon./n")
+    print("\nRemove item feature coming soon.\n")
 
 def main():
     while True:

@@ -1,7 +1,7 @@
 inventory = {}
 
 def add_item():
-    name = input("Enter item name: ").str()
+    name = input("Enter item name: ").strip()
     
     if name in inventory:
         print("Item already exists. Use edit option to update.")

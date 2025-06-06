@@ -60,7 +60,7 @@ def main():
             add_item()
         elif choice == "3":
             edit_item() 
-        elif choice == "3":
+        elif choice == "4":
             remove_item() 
         elif choice == "5":
             print("Exiting Inventory System. Goodbye!")

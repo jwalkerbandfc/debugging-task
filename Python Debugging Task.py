@@ -39,11 +39,37 @@ def view_inventory():
 
 
 def edit_item():
-    print("\nEdit item feature coming soon.\n")
+    for item in inventory:
+        print(f"- {item}")
+    name = input("Enter the name of the item to edit: ").strip()
+    if name not in inventory:
+        print("Item not found. Please add the item first.")
+        return
+    perishable_input = input("Is the item perishable? (yes/no): ").strip().lower()
+    perishable = perishable_input == "yes"
+    try:
+        qty = int(input("Enter new quantity: ").strip())
+    except ValueError:
+        print("Invalid quantity. Please enter a number.")
+        return
+    description = input("Enter new item description: ").strip()
+    inventory[name] = {
+        "perishable": perishable,
+        "qty": qty,
+        "description": description
+    }
+    print(f"Item {name} updated successfully.")
 
 
 def remove_item():
-    print("\nRemove item feature coming soon.\n")
+    for item in inventory:
+        print(f"- {item}")
+    name = input("Enter the name of the item to remove: ").strip()
+    if name not in inventory:
+        print("Item not found. Nothing removed.")
+        return
+    del inventory[name]
+    print(f"Item {name} removed successfully.")
 
 
 def main():

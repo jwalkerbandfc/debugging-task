@@ -1,12 +1,13 @@
 inventory = {}
 
+
 def add_item():
     name = input("Enter item name: ").strip()
-    
+
     if name in inventory:
         print("Item already exists. Use edit option to update.")
         return
-    
+
     perishable_input = input("Is the item perishable? (yes/no): ").strip().lower()
     perishable = perishable_input == "yes"
 
@@ -18,13 +19,10 @@ def add_item():
 
     description = input("Enter item description: ").strip()
 
-    inventory[name] = {
-        "perishable": perishable,
-        "qty": qty,
-        "description": description
-    }
+    inventory[name] = {"perishable": perishable, "qty": qty, "description": description}
 
     print(f"Item {name} added successfully.")
+
 
 def view_inventory():
     if not inventory:
@@ -34,14 +32,19 @@ def view_inventory():
     print("\nCurrent Inventory:")
     for item, details in inventory.items():
         perishable_status = "Yes" if details["perishable"] else "No"
-        print(f"- {item}: Perishable: {perishable_status}, Qty: {details['qty']}, Description: {details['description']}")
+        print(
+            f"- {item}: Perishable: {perishable_status}, Qty: {details['qty']}, Description: {details['description']}"
+        )
     print()
+
 
 def edit_item():
     print("\nEdit item feature coming soon.\n")
 
+
 def remove_item():
     print("\nRemove item feature coming soon.\n")
+
 
 def main():
     while True:
@@ -59,14 +62,15 @@ def main():
         elif choice == "2":
             add_item()
         elif choice == "3":
-            edit_item() 
+            edit_item()
         elif choice == "4":
-            remove_item() 
+            remove_item()
         elif choice == "5":
             print("Exiting Inventory System. Goodbye!")
             break
         else:
             print("Invalid choice. Please enter a number between 1 and 5.")
+
 
 # Call Main Menu
 main()
